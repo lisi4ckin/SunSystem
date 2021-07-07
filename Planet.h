@@ -1,17 +1,17 @@
 #pragma once
+#include "tObject.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
-class Planet
+class Planet : public tObject
 {
-private:
-	int x;
-	int y;
-	int displayX;
-	int displayY;
+protected:
 	int radius;
 	int radiusOrbit;
 	float speed;
 	float angle;
+	int displayX;
+	int displayY;
+private:
 	CircleShape circleShape;
 public:
 	Planet(int x, int y, int radius, int radiusOrbit, float speed);
