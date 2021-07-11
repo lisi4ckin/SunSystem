@@ -4,7 +4,7 @@
 using namespace sf;
 class Planet : public tObject
 {
-protected:
+public:
 	int radius;
 	int radiusOrbit;
 	float speed;

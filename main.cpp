@@ -1,4 +1,5 @@
 #include "libs.h"
+#include "Satellite.h"
 #include "Planet.h"
 using namespace sf;
 using namespace std;
@@ -13,6 +14,7 @@ void initPlanet(vector<Planet>& planets) {
 int main() {
 	vector<Planet>Planets;
 	initPlanet(Planets);
+	Satellite satellite(Planets[1].displayX, Planets[1].displayY, 10, 60, 1);
 	RenderWindow window(VideoMode(1920, 1080), "test");
 	while (window.isOpen()) {
 		Event event;
@@ -22,8 +24,10 @@ int main() {
 			}
 		}
 		window.clear();
-		for (int i = 0; i < Planets.size(); i++) {
+		for (int i = 0; i < 2; i++) {
 			Planets[i].Draw(window);
+			satellite.Move(Planets[1].displayX, Planets[1].displayY);
+			satellite.Draw(window);
 		}
 		window.display();
 		Sleep(10);
