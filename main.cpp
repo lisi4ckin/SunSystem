@@ -14,7 +14,7 @@ void initPlanet(vector<Planet>& planets) {
 int main() {
 	vector<Planet>Planets;
 	initPlanet(Planets);
-	Satellite satellite(Planets[1].displayX, Planets[1].displayY, 10, 60, 1);
+	Satellite satellite(Planets[1].displayX, Planets[1].displayY, 10, 60, 2);
 	RenderWindow window(VideoMode(1920, 1080), "test");
 	while (window.isOpen()) {
 		Event event;
